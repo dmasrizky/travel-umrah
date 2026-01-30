@@ -28,7 +28,7 @@ const FEATURES = [
 
 export default function WhyUs() {
   return (
-    <section className="py-24 bg-white" id="tentang-kami">
+    <section className="py-24 bg-white" id="mengapa-kami">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-brand-green mb-6">
@@ -48,7 +48,7 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="p-8 rounded-3xl bg-white hover:shadow-2xl transition-all duration-300 border-2 border-brand-cream hover:border-brand-gold/30 group text-center hover:-translate-y-2"
+              className="p-8 rounded-3xl bg-white hover:shadow-2xl transition-all duration-300 border-2 border-brand-cream hover:border-brand-gold/30 group text-center hover:-translate-y-2 active:translate-y-0"
             >
               <div className="w-20 h-20 rounded-2xl bg-brand-cream/50 text-brand-gold flex items-center justify-center mx-auto mb-6 group-hover:bg-brand-gold group-hover:text-white transition-colors duration-300 shadow-sm">
                 <feature.icon size={40} strokeWidth={1.5} />

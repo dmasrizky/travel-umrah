@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
-import LoadingScreen from "@/components/layout/LoadingScreen";
+
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -48,8 +48,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={`${outfit.variable} ${inter.variable} font-sans antialiased`}>
-        <LoadingScreen />
-        {children}
+{children}
       </body>
     </html>
   );

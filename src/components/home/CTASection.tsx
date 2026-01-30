@@ -42,14 +42,14 @@ export default function CTASection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 href="https://wa.me/628113097888"
-                className="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl flex items-center justify-center gap-2 btn-press"
               >
                 Daftar Sekarang
                 <ArrowRight size={20} />
               </Link>
               <Link 
                 href="https://wa.me/628113097888?text=Saya%20ingin%20konsultasi%20umrah"
-                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-full font-semibold text-lg transition-all backdrop-blur-md flex items-center justify-center gap-2"
+                className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/30 rounded-full font-semibold text-lg transition-all backdrop-blur-md flex items-center justify-center gap-2 btn-press"
               >
                 <Phone size={20} />
                 Hubungi Kami

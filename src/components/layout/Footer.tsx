@@ -64,10 +64,11 @@ export default function Footer() {
           <div>
              <h4 className="text-white font-bold text-lg mb-6 font-heading">Menu</h4>
              <ul className="space-y-3">
-                <li><Link href="/" className="hover:text-brand-gold transition-colors">Beranda</Link></li>
-                <li><Link href="#paket-umrah" className="hover:text-brand-gold transition-colors">Paket Umrah</Link></li>
-                <li><Link href="#tentang-kami" className="hover:text-brand-gold transition-colors">Tentang Kami</Link></li>
-                <li><Link href="#galeri" className="hover:text-brand-gold transition-colors">Galeri</Link></li>
+                <li><Link href="/#beranda" className="hover:text-brand-gold transition-colors">Beranda</Link></li>
+                <li><Link href="/#mengapa-kami" className="hover:text-brand-gold transition-colors">Mengapa Kami</Link></li>
+                <li><Link href="/#paket-ibadah" className="hover:text-brand-gold transition-colors">Paket Ibadah</Link></li>
+                <li><Link href="/#galeri" className="hover:text-brand-gold transition-colors">Galeri</Link></li>
+                <li><Link href="/#testimoni" className="hover:text-brand-gold transition-colors">Testimoni</Link></li>
              </ul>
           </div>
         </div>

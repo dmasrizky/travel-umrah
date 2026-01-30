@@ -3,29 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Quote } from "lucide-react";
+import { Testimonial } from "@prisma/client";
 
-const TESTIMONIALS = [
-  {
-    name: "Hj. Siti Aminah",
-    role: "Jamaah Umrah 2024",
-    content: "MasyaAllah, pelayanan yang sangat luar biasa. Pembimbingnya sangat sabar dan berilmu. Hotelnya juga sangat dekat dengan masjid.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2864&auto=format&fit=crop"
-  },
-  {
-    name: "H. Ahmad Fauzi",
-    role: "Jamaah Haji Plus",
-    content: "Alhamdulillah perjalanan haji kami dilancarkan. Fasilitas yang diberikan sesuai dengan yang dijanjikan. Terima kasih KBIH An Nur.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop"
-  },
-  {
-    name: "Ibu Rina Wati",
-    role: "Jamaah Umrah Ramadan",
-    content: "Pengalaman umrah pertama yang sangat berkesan. Suasana kekeluargaannya sangat terasa, serasa berangkat dengan keluarga sendiri.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=2961&auto=format&fit=crop"
-  }
-];
+interface TestimonialsProps {
+    items: Testimonial[];
+}
 
-export default function Testimonials() {
+export default function Testimonials({ items }: TestimonialsProps) {
   return (
     <section className="py-24 bg-brand-cream relative overflow-hidden" id="testimoni">
       {/* Decorative Background Elements */}
@@ -44,14 +28,25 @@ export default function Testimonials() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((item, index) => (
+           {items.length === 0 && (
+             <div className="col-span-full flex flex-col items-center justify-center py-16 text-center">
+              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mb-6 shadow-sm">
+                <Quote size={40} className="text-brand-gold" />
+              </div>
+              <h3 className="text-xl font-bold text-brand-text mb-2 font-heading">Testimoni Akan Hadir</h3>
+              <p className="text-slate-500 max-w-md">
+                Cerita dan pengalaman para jamaah kami akan segera ditampilkan di sini.
+              </p>
+            </div>
+          )}
+          {items.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-all border border-brand-beige relative flex flex-col"
+              className="bg-white p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all border border-brand-beige relative flex flex-col hover:-translate-y-1"
             >
               <Quote className="text-brand-gold/20 mb-6 rotate-180" size={40} />
               
@@ -61,12 +56,18 @@ export default function Testimonials() {
               
               <div className="flex items-center gap-4 mt-auto">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border border-brand-gold/30">
-                  <Image
-                    src={item.image}
-                    alt={item.name}
-                    fill
-                    className="object-cover"
-                  />
+                  {item.avatarUrl ? (
+                     <Image
+                        src={item.avatarUrl}
+                        alt={item.name}
+                        fill
+                        className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-brand-beige flex items-center justify-center text-brand-green font-bold text-lg">
+                        {item.name.charAt(0)}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <h4 className="font-bold text-brand-text font-heading">{item.name}</h4>

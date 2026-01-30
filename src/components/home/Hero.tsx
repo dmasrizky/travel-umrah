@@ -57,8 +57,8 @@ export default function Hero() {
            transition={{ duration: 0.8, ease: "easeOut" }}
            className="flex flex-col items-center"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-cream/90 text-brand-golden font-medium mb-6 backdrop-blur-sm shadow-sm border border-brand-gold/20 text-brand-text">
-            Ijin Resmi Kemenag No. U.300 Th 2021
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-cream/90 text-brand-text font-medium mb-6 backdrop-blur-sm shadow-sm border border-brand-gold/20 text-xs md:text-sm">
+            Izin Pelayanan Umrah Kemenag No. 674 Thn 2017 & Izin Pelayanan Haji Kemenag No. 1081 Thn 2021
           </span>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold mb-6 tracking-tight drop-shadow-md text-white">
@@ -73,14 +73,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
               href="https://wa.me/628113097888"
-              className="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl flex items-center gap-2"
+              className="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white rounded-full font-semibold text-lg transition-all transform hover:scale-105 shadow-xl flex items-center gap-2 btn-press"
             >
               Daftar Umrah
               <ArrowRight size={20} />
             </Link>
             <Link 
               href="https://wa.me/628113097888?text=Saya%20ingin%20konsultasi%20umrah"
-              className="px-8 py-4 bg-white/20 hover:bg-white/30 text-white border border-white/40 rounded-full font-semibold text-lg transition-all backdrop-blur-md"
+              className="px-8 py-4 bg-white/20 hover:bg-white/30 text-white border border-white/40 rounded-full font-semibold text-lg transition-all backdrop-blur-md btn-press"
             >
               Konsultasi
             </Link>

@@ -53,18 +53,17 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
-          {["Beranda", "Paket Umrah", "Tentang Kami", "Galeri"].map((item) => (
+          {[{name: "Beranda", id: "beranda"}, {name: "Mengapa Kami", id: "mengapa-kami"}, {name: "Paket Ibadah", id: "paket-ibadah"}, {name: "Galeri", id: "galeri"}, {name: "Testimoni", id: "testimoni"}].map((item) => (
             <button
-              key={item}
+              key={item.name}
               onClick={(e) => {
                 e.preventDefault();
-                const id = item.toLowerCase().replace(" ", "-");
-                const element = document.getElementById(id);
+                const element = document.getElementById(item.id);
                 if (element) {
                   element.scrollIntoView({ behavior: "smooth" });
                 } else {
                    // If element not found (e.g. we are on detail page), go to home with anchor
-                   window.location.href = `/#${id}`;
+                   window.location.href = `/#${item.id}`;
                 }
               }}
               className={cn(
@@ -72,7 +71,7 @@ export default function Navbar() {
                 isScrolled ? "text-brand-text" : "text-white/90"
               )}
             >
-              {item}
+              {item.name}
             </button>
           ))}
         </div>
@@ -105,22 +104,21 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-white shadow-xl border-t border-brand-cream p-4 md:hidden flex flex-col gap-4 animate-in slide-in-from-top-2">
-          {["Beranda", "Paket Umrah", "Tentang Kami", "Galeri"].map((item) => (
+          {[{name: "Beranda", id: "beranda"}, {name: "Mengapa Kami", id: "mengapa-kami"}, {name: "Paket Ibadah", id: "paket-ibadah"}, {name: "Galeri", id: "galeri"}, {name: "Testimoni", id: "testimoni"}].map((item) => (
             <button
-              key={item}
+              key={item.name}
               onClick={() => {
                  setIsMobileMenuOpen(false);
-                 const id = item.toLowerCase().replace(" ", "-");
-                 const element = document.getElementById(id);
+                 const element = document.getElementById(item.id);
                  if (element) {
                    element.scrollIntoView({ behavior: "smooth" });
                  } else {
-                   window.location.href = `/#${id}`;
+                   window.location.href = `/#${item.id}`;
                  }
               }}
               className="text-brand-text font-medium py-2 border-b border-brand-cream hover:text-brand-green text-left"
             >
-              {item}
+              {item.name}
             </button>
           ))}
            <Link
