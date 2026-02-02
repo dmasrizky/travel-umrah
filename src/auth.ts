@@ -37,6 +37,7 @@ export const { auth, signIn, signOut, handlers } = NextAuth({
     // But to be safe on vercel, explicit secret is often good. 
     // I will just remove the console log.
     secret: process.env.AUTH_SECRET,
+    trustHost: true, // Required for Vercel deployment
     providers: [
         Credentials({
             async authorize(credentials) {
